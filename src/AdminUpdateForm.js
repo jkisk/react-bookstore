@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
 
 
-export default class AdminForm extends Component {
+export default class AdminUpdateForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            title: "",
-            subtitle: "",
-            author: "",
-            published: "",
-            publisher: "",
-            pages: "",
-            description: "",
-            website: ""
+            id: this.props.id,
+            title: this.props.title ,
+            subtitle: this.props.subtitle,
+            author: this.props.author,
+            published: this.props.published,
+            publisher: this.props.publisher,
+            pages: this.props.pages,
+            description: this.props.description,
+            website: this.props.website
         }
 
     }
+
+
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -25,10 +29,11 @@ export default class AdminForm extends Component {
 
     handleSubmit = (e) => {
        e.preventDefault()
-        console.log(this.state)
-        this.props.newBook(this.state)
+        console.log("nowthislogcounts:",this.state)
+        this.props.updateBook(this.state)
 
     }
+
 
     render() {
         return (
@@ -41,7 +46,7 @@ export default class AdminForm extends Component {
                 <input type="text" placeholder="pages" value={this.state.pages} onChange={this.handleChange} name="pages" />
                 <input type="text" placeholder="description" value={this.state.description} onChange={this.handleChange} name="description" />
                 <input type="text" placeholder="website" value={this.state.website} onChange={this.handleChange} name="website" />
-                <input type='submit' value="Add Book" />
+                <input type='submit' value="Update Book" />
             </form >
         )
     }

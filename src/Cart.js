@@ -12,10 +12,6 @@ export default class Cart extends Component {
             total: 0
         })
     }
-    componentDidMount() {
-        this.props.getCartBooks()
-    }
-// needs to be triggered when book is added to cart from booklist
     
 
     render() {

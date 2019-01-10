@@ -1,17 +1,22 @@
 import React from 'react'
+import { Button } from "react-bulma-components/full"
 
 
 
-export default function CartBook({ title, subtitle, author, removeFromCart}) {
+export default function CartBook({ title, subtitle, author, removeFromCart }) {
     return (
         <div className='bookBlurb'>
-            <h3>Item</h3>
             <p>
+                <br />
                 <span>Title: </span>{title}
+                <br />
                 <span>SubTitle: </span>{subtitle}
+                <br />
                 <span>Author: </span>{author}
+                <br />
             </p>
-            <button onClick={removeFromCart}>Remove</button>
+            <br/>
+            <Button onClick={removeFromCart} color="primary">Remove</Button>
         </div>
     )
 }

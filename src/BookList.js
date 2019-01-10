@@ -1,24 +1,19 @@
 import React, { Component } from 'react'
 import Book from './Book'
+import { Button } from "react-bulma-components/full"
 
 
 export default class BookList extends Component {
-
-    
-    componentDidMount() {
-       this.props.getBooks()
-    }
-
-    
-    
 
 
     render() {
 
                 return(
             <div>
-            <button onClick={this.props.sortByTitle}>Sort by Title</button>
-            <button onClick={this.props.sortByAuthor}>Sort by Author</button>
+            <Button onClick={this.props.sortByTitle} color="primary">Sort by Title</Button>
+            <Button onClick={this.props.sortByAuthor}color="primary">Sort by Author</Button>
+            <br />
+            <br />
                 {
                 this.props.books.map(b => {
                     return <Book key={b.id} {...b} addToCart={() => this.props.addToCart(b.id)} />
